@@ -1,0 +1,236 @@
+/* ========================================= */
+/* --- PROFILE PAGE --- */
+/* ========================================= */
+.profile-main {
+    width: 90%;
+    max-width: 1720px;
+    margin: 150px auto 100px auto;
+    display: flex;
+    gap: 24px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    animation: fadeUp 0.8s ease-out 0.2s forwards;
+}
+
+.profile-sidebar {
+    width: 400px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-content-grid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 24px;
+}
+
+.profile-card,
+.content-card {
+    background-color: #1B1B1B;
+    border: 1px solid #40403F;
+    border-radius: 24px;
+    padding: 30px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.content-card:hover {
+    border-color: #666;
+}
+
+.profile-info-card {
+    height: 499px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px 30px;
+}
+
+.profile-avatar-container {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-family: 'Digital Pixel', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 -10px 0;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.profile-email {
+    font-family: 'Digital Pixel', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #888;
+    margin: 0;
+    word-break: break-all;
+    text-align: center;
+}
+
+.edit-profile-btn {
+    width: 100%;
+    max-width: 340px;
+    min-height: 36px;
+    background: #272725;
+    color: #888;
+    border: 1px solid #40403F;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin-top: auto;
+}
+
+.edit-profile-btn:hover {
+    background: #333;
+    color: white;
+    border-color: #666;
+}
+
+.course-progress-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1B1B1B;
+    padding: 30px 35px;
+    cursor: pointer;
+}
+
+.course-progress-card .course-header {
+    margin-bottom: 10px;
+}
+
+.course-progress-card .course-icon-placeholder {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.course-progress-card .modules-count {
+    font-family: 'Digital Pixel', sans-serif;
+    font-size: 14px;
+    color: #B0B0B0;
+    margin-bottom: 8px;
+}
+
+.course-progress-card .course-name-big {
+    font-family: 'Digital Pixel', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin: 10px 0;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background-color: #333;
+    border-radius: 3px;
+    margin-top: auto;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #7CFC00;
+    border-radius: 3px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Digital Pixel', sans-serif;
+    font-size: 16px;
+    color: #7CFC00;
+}
+
+
+
+/* =========================================
+   TRASH ZONE STYLES
+   ========================================= */
+.trash-zone {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 300px;
+    height: 120px;
+    border: 2px dashed #ff4d4d;
+    background-color: rgba(255, 77, 77, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+}
+
+.trash-zone.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.trash-zone:hover,
+.trash-zone.drag-over {
+    background-color: rgba(255, 77, 77, 0.2);
+    transform: scale(1.05);
+    border-color: #ff0000;
+}
+
+.trash-zone.drag-over .trash-lid {
+    transform: rotate(-30deg) translateY(-5px) translateX(2px) !important;
+}
+
+/* Optional: also support hover if pointer events allow */
+.trash-zone:hover .trash-lid {
+    transform: rotate(-30deg) translateY(-5px) translateX(2px) !important;
+}
+
+.trash-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #ff4d4d;
+    font-family: 'Digital Pixel', sans-serif;
+    text-align: center;
+    pointer-events: none;
+    /* Prevent drag events from firing on children */
+}
+
+.trash-icon-wrapper svg {
+    width: 48px;
+    height: 48px;
+    overflow: visible;
+    pointer-events: none;
+    /* Ensure rotated lid doesn't get clipped */
+}

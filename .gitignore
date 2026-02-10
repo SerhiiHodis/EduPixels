@@ -1,0 +1,35 @@
+# --- Frontend (React + Vite) ---
+node_modules/
+Frontend/node_modules/
+Frontend/dist/
+Frontend/dist-ssr/
+Frontend/*.local
+Frontend/.vscode/
+Frontend/.DS_Store
+
+# --- Backend (Django) ---
+*.pyc
+*__pycache__/
+Backend/__pycache__/
+Backend/*.pyc
+Backend/db.sqlite3
+Backend/.env
+Backend/venv/
+Backend/env/
+Backend/.vscode/
+
+# --- System & IDE ---
+.vscode/
+.idea/
+.DS_Store
+*.log
+logs/
+temp/
+tmp/
+temp-react/
+_archive/
+dummy
+
+# --- Large Files ---
+# video.mp4 (Should be handled by Git LFS, but if not - uncomment below to ignore)
+# video.mp4

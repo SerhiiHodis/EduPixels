@@ -1,0 +1,171 @@
+/* ========================================= */
+/* --- HEADER --- */
+/* ========================================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 26px;
+    height: 80px;
+    width: 90%;
+    max-width: 1720px;
+    box-sizing: border-box;
+    background-color: rgba(27, 27, 27, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(64, 64, 63, 0.5);
+    z-index: 1000;
+    margin-top: 0;
+    animation: slideDown 0.8s ease-out forwards;
+}
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+    font-family: 'Digital Pixel', sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0 30px 0 10px;
+    line-height: 1;
+    /* Спроба через padding (відступ зверху всередині блоку) */
+    padding-top: 15px;
+    display: inline-block;
+    vertical-align: middle;
+
+    /* Скидаємо все інше */
+    margin-top: 0;
+    position: static;
+    transform: none;
+
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Кнопки в хедері */
+.right button {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    height: 40px;
+}
+
+.right button:nth-child(1) {
+    background: #333333;
+    color: white;
+    border: 1px solid #40403F;
+}
+
+.right button:nth-child(1):hover {
+    background: #444444;
+    border-color: #666;
+    transform: translateY(-1px);
+}
+
+.right button:nth-child(2) {
+    background: #FFFFFF;
+    color: #1B1B1B;
+    font-weight: 600;
+}
+
+.right button:nth-child(2):hover {
+    background: #E0E0E0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Текст "AI" в хедері (для Topics) */
+.header-icon-text {
+    font-family: 'Digital Pixel', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    margin-right: 15px;
+    letter-spacing: 1px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Аватар */
+.header-avatar-small {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #40403F;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.header-avatar-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Header для Profile */
+.header-search-container {
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 20px;
+    height: 40px;
+    background: #272725;
+    border: 1px solid #40403F;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    transition: border-color 0.3s ease;
+}
+
+.header-search-container:focus-within {
+    border-color: #888;
+}
+
+.profile-header-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 14px;
+}
+
+.profile-header-input::placeholder {
+    color: #666;
+}
+
+.streak-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #FF4D00;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Digital Pixel', sans-serif;
+    letter-spacing: 1px;
+}
+
+.fire-icon-placeholder {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}

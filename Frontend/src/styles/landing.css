@@ -1,0 +1,317 @@
+/* ========================================= */
+/* --- ЛЕНДІНГ (Index Page) --- */
+/* ========================================= */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 270px;
+    width: 100%;
+}
+
+.content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-family: 'Digital Pixel', sans-serif;
+    font-weight: 400;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.2s forwards;
+}
+
+.content .subtitle {
+    font-size: 18px;
+    color: #E3D8EF;
+    margin-top: -12px;
+    font-weight: 100;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.4s forwards;
+}
+
+/* Поле вводу (Input) */
+.input-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 960px;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    background: #272725;
+    border: 1px solid #40403F;
+    border-radius: 60px;
+    margin-top: 50px;
+    padding: 10px 20px 10px 25px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.6s forwards;
+}
+
+.input-container:focus-within {
+    border-color: #e3e3e3;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.input-container textarea {
+    flex: 1;
+    resize: none;
+    overflow-y: hidden;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    margin-right: 10px;
+    color: white;
+    font-family: inherit;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.input-container textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.input-container textarea::placeholder {
+    color: #8A8A9A;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.input-container:focus-within textarea::placeholder {
+    color: #5a5a5a;
+}
+
+.input-container button {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: #92918F;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.input-container button:hover {
+    background: #FFFFFF;
+    transform: scale(1.1);
+}
+
+.input-container button img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.input-container button.active {
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.input-container button:disabled {
+    background: #92918F;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.postscript {
+    font-size: 14px;
+    color: #E3D8EF;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards;
+}
+
+/* --- СЛАЙДЕР --- */
+.courses-section {
+    width: 90%;
+    max-width: 1720px;
+    margin: 470px auto 60px auto;
+    background-color: #1B1B1B;
+    border: 1px solid #40403F;
+    border-radius: 24px;
+    box-sizing: border-box;
+    padding: 30px 50px 40px 50px;
+    opacity: 0;
+    animation: fadeUp 1s ease-out 0.8s forwards;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.courses-section:hover {
+    border-color: #555;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.courses-title {
+    font-size: 24px;
+    font-weight: 200;
+    color: #ffffff;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.slider-container {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.courses-wrapper {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 5px 0;
+}
+
+.courses-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.course-card {
+    position: relative;
+    background-color: #1A1923;
+    border-radius: 16px;
+    border: 1px solid #2C2C34;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: calc((100% - 60px) / 4);
+    flex-shrink: 0;
+    aspect-ratio: 1.6 / 1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.course-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #444;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.course-card .card-content-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.course-card:hover .card-content-image {
+    transform: scale(1.05);
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.course-name {
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: 0.3px;
+}
+
+.course-modules {
+    font-size: 12px;
+    font-weight: 400;
+    color: #B0B0B0;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.slider-container:hover .slider-button {
+    opacity: 1;
+}
+
+.slider-button:hover {
+    background: rgba(60, 60, 60, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-button:disabled {
+    background: transparent;
+    opacity: 0.2 !important;
+    cursor: not-allowed;
+    transform: translateY(-50%) scale(1);
+}
+
+.button_left {
+    left: 15px;
+}
+
+.button_right {
+    right: 15px;
+}
+
+.slider-button svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.button_left:hover svg {
+    transform: translateX(-2px);
+}
+
+.button_right:hover svg {
+    transform: translateX(2px);
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #40403F;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover,
+.dot.active {
+    background-color: #FFFFFF;
+    transform: scale(1.2);
+}
