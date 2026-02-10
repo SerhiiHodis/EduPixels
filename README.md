@@ -11,8 +11,6 @@
 
 EduPixels is an innovative web platform that leverages Artificial Intelligence to generate fully structured educational courses from a simple text prompt. It provides a complete learning environment with interactive content, an AI Assistant for real-time support, and an automated grading system.
 
-![Project Demo](file:///c:/Users/user/My_Works/works_version/video.mp4)
-
 ---
 
 ## 👥 The Team
